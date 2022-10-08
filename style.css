@@ -101,7 +101,7 @@ h2 {
     min-height: 65vh;
     box-shadow: 3px 3px 15px var(--bs-code-color);
     background: linear-gradient(to right, var(--bs-colores));
-    animation: BgGradient 3s linear infinite;
+    animation: BgGradient 5s linear infinite;
 }
 @keyframes BgGradient {
     0% {
