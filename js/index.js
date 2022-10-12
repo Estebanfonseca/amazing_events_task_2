@@ -1,18 +1,22 @@
 let cardHome = document.getElementById("section")
+
 let cardPast = document.getElementById("sectionPast")
+
 let cardUpcomming = document.getElementById('section1')
+
 let fecha = Date.parse(currentDate)
+
 let past = events.filter(function(date){
     return Date.parse(date.date) < fecha
-})
+}).sort((a,b)=> a.name.localeCompare(b.name))
+
 let upcomming = events.filter(function(date){
     return Date.parse(date.date) > fecha
-})
+}).sort((a,b)=> a.name.localeCompare(b.name))
 
-
-
-
-
+let home = events.map(function(event){
+    return event
+}).sort((a,b)=> a.name.localeCompare(b.name))
 
 function printCards(array,id){
     for(let i = 0;i< array.length;i++){
@@ -29,6 +33,6 @@ function printCards(array,id){
 
 printCards(past,cardPast)
 printCards(upcomming,cardUpcomming)
-printCards(events,cardHome)
+printCards(home,cardHome)
 
 
